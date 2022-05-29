@@ -1,7 +1,17 @@
 const models = require("../models/models");
 
 const getMovie = (req, res) => {
-  models.Movie.findAll().then((movies) => res.status(200).json(movies));
+  models.Movie.findAll().then((movies) => {
+    res.status(200).json(movies);
+  });
+};
+//테스트
+const detailGetMovie = (req, res) => {
+  models.Movie.findAll({ where: { title: req.params.title } }).then(
+    (movies) => {
+      res.status(200).json(movies);
+    }
+  );
 };
 
 const postMovie = (req, res) => {
@@ -40,4 +50,5 @@ module.exports = {
   postMovie,
   deleteMovie,
   putMovie,
+  detailGetMovie,
 };

@@ -5,6 +5,8 @@ const MovieCtrl = require("../controllers/Movie_Ctrl");
 
 router.get("/movies", MovieCtrl.getMovie);
 
+router.get("/movies/:title", MovieCtrl.detailGetMovie);
+
 router.post("/movies", MovieCtrl.postMovie);
 
 router.put("/movies", MovieCtrl.putMovie);

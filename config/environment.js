@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const environments = {
   development: {
-    mysqlHost: "tutorial.chwfgejjmzzw.us-west-1.rds.amazonaws.com",
-    mysqlUser: "jaehyuck",
-    mysqlPassword: "shwogur31",
-    mysqlDB: "tutorial",
+    mysqlHost: process.env.CLIENT_HOST,
+    mysqlUser: process.env.CLIENT_USER,
+    mysqlPassword: process.env.CLIENT_PASSWORD,
+    mysqlDB: process.env.MYSQLDB,
   },
   production: {},
 };
